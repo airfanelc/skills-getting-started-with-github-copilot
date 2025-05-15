@@ -1,0 +1,38 @@
+<style>
+.participant-card {
+    background: linear-gradient(135deg, #fffde4 0%, #ffe680 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 221, 51, 0.15);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    color: #222;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    border: 2px solid #ffe066;
+    transition: transform 0.2s;
+}
+.participant-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(255, 221, 51, 0.25);
+}
+.participant-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd600;
+}
+.participant-info {
+    font-size: 1.1rem;
+    color: #bfa600;
+}
+</style>
+
+<div>
+    {% for participant in participants %}
+    <div class="participant-card">
+        <div class="participant-name">{{ participant.name }}</div>
+        <div class="participant-info">
+            Email: <span style="color:#ffd600;">{{ participant.email }}</span><br>
+            Joined: <span style="color:#bfa600;">{{ participant.joined_date }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
